@@ -1,13 +1,14 @@
 window.onload = init; // isn't there a cleaner way to code this?
 
 function init () {
-    var image = document.getElementById("zero");
-    image.onclick = showAnswer;
+    var images = document.getElementsByTagName("img"); // ByTagName essentially creates an array of all img elements
+    // for each image, run showAnswer function onclick
+    for (var i = 0; i < images.length; i++) {
+        images[i].onclick = showAnswer;
+    }
 }
 
-function showAnswer() {
-    //// diverging from HFJS code here, which are the two lines below. rather than using two images, one regular and one blurred, I'm blurring regular.
-    // var image = document.getElementById("zero");
-    // image.src = "img/zero.jpg"; 
-    document.getElementById("zero").style.filter = "blur(0)"; // this removes the blur filter from image
+function showAnswer(eventObj) {
+    //// diverging from HFJS code. I'm using CSS to blur and unblur image, rather than using blurred and unblurred images.
+    eventObj.target.style.filter = "blur(0)"; // this selects the event object used in the init function, removes the blur filter from image clicked on
 }
