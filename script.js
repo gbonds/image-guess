@@ -1,4 +1,4 @@
-window.onload = init; // isn't there a cleaner way to code this?
+window.onload = init; //// isn't there a cleaner way to code this?
 
 function init () {
     var images = document.getElementsByTagName("img"); // ByTagName essentially creates an array of all img elements
@@ -18,7 +18,7 @@ function showAnswer(eventObj) {
     setTimeout(reblur,3000,eventObj);
 }
 
-function reblur(eventObj) {
+function reblur(eventObj) { //// is it okay to use eventObj in this function? it seems to work...
     eventObj.target.style.filter = "blur(12.5px)"; // blur should match blur set in style.ss
 }
 
