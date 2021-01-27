@@ -14,11 +14,13 @@ function showAnswer(eventObj) {
     // this selects the event object used in the init function, removes the blur filter from image clicked on
     eventObj.target.style.filter = "blur(0)"; 
 
-    // sets timer to run reblur function on eventObj in 3sec
-    setTimeout(reblur,3000,eventObj);
-}
+    function reblur(eventObj,n) {
 
-function reblur(eventObj) { //// is it okay to use eventObj in this function? it seems to work...
-    eventObj.target.style.filter = "blur(12.5px)"; // blur should match blur set in style.ss
-}
+        setTimeout (function() {
+            eventObj.target.style.filter = "blur(12.5px)";
+        }, n);
 
+    }
+
+    reblur(eventObj,3000);
+}
